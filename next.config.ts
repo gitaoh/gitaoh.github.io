@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
     /* config options here */
     reactCompiler: true,
     output: "export",
-    trailingSlash: false,
-    assetPrefix: "",
-    basePath: "",
+    trailingSlash: true,
+    assetPrefix: "/",
+    basePath: "/",
     images: {
         unoptimized: true
     }

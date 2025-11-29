@@ -1,24 +1,23 @@
-// "use client"
+"use client"
 
-// import {useRef} from 'react';
-
-// import gsap from 'gsap';
-// import {useGSAP} from '@gsap/react';
-//
-// gsap.registerPlugin(useGSAP);
-
+import React from "react";
+import {Canvas} from '@react-three/fiber'
+import Box from "@/components/Box";
 
 export default function Home() {
-    // const container = useRef(null);
-    //
-    // useGSAP(() => {
-    //     gsap.to('.box', {rotation: 180});
-    // }, {scope: container});
     return (
-        <div className="flex min-h-screen items-center justify-center bg-white font-sans">
-            <h1 className={"text-9xl font-extrabold text-cyan-900"}>
+        <div className="flex min-h-screen flex-col items-center justify-center bg-white font-sans">
+            <h1 className={"text-9xl font-extrabold text-green-500"}>
                 HELLO WORLD
             </h1>
+            <br/>
+            <Canvas>
+                <ambientLight intensity={Math.PI / 2}/>
+                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI}/>
+                <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI}/>
+                <Box position={[-1.2, 0, 0]}/>
+                <Box position={[1.2, 0, 0]}/>
+            </Canvas>
         </div>
     );
 }

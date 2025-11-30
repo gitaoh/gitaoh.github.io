@@ -6,7 +6,7 @@ import Box from "@/components/Box";
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-white font-sans">
+        <div className="flex min-h-screen flex-col items-center justify-center font-sans">
             <h1 className={"text-9xl font-extrabold text-green-500"}>
                 HELLO WORLD
             </h1>

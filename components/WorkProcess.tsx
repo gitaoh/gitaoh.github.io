@@ -69,13 +69,15 @@ export default function WorkProcess() {
         transition={{ duration: 0.5 }}
       >
         <div className="mb-6 flex items-center gap-2">
-          <Target className="h-5 w-5 text-gray-600" />
-          <h3 className="text-black">How I work</h3>
+          <Target className="h-5 w-5 text-gray-600 dark:text-neutral-200" />
+          <h3 className="text-black dark:text-neutral-300">How I work</h3>
         </div>
 
         <div className="mb-8">
-          <h4 className="mb-4 text-2xl text-black">{getStep(step).title}</h4>
-          <p className="max-w-2xl text-sm leading-relaxed text-gray-600">
+          <h4 className="mb-4 text-2xl text-black dark:text-neutral-300">
+            {getStep(step).title}
+          </h4>
+          <p className="max-w-2xl text-sm leading-relaxed text-gray-600 dark:text-neutral-100">
             {getStep(step).description}
           </p>
         </div>
@@ -93,8 +95,8 @@ export default function WorkProcess() {
               onClick={() => handleStep(index)}
               className={`cursor-pointer rounded-full px-6 py-2 text-sm transition-all ${
                 index === step
-                  ? "bg-black text-white"
-                  : "border border-gray-200 bg-white text-gray-600 hover:border-gray-300"
+                  ? "bg-black text-white dark:bg-neutral-50 dark:text-neutral-500"
+                  : "border border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-neutral-600 dark:text-neutral-100 dark:hover:border-neutral-300 dark:bg-neutral-600"
               }`}
             >
               Step {current.number}

@@ -5,11 +5,11 @@ import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import InfoCards from "@/components/InfoCards";
 import WorkProcess from "@/components/WorkProcess";
-import Location from "@/components/Location"
+import Location from "@/components/Location";
 
 export default function Home() {
   return (
-    <div className="min-h-screen dark:bg-gray-700">
+    <div className="dak:text-white min-h-screen bg-white dark:bg-neutral-700">
       <div className="mx-auto max-w-[50%]">
         <Header />
         <Hero />

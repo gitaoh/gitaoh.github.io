@@ -11,15 +11,15 @@ export default function Location() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-6"
+                className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-6 dark:bg-neutral-600 dark:border-neutral-500"
             >
                 <div className="mb-4 flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-gray-600" />
-                    <h3 className="text-black">Location</h3>
+                    <MapPin className="h-5 w-5 text-gray-600 dark:text-gray-50" />
+                    <h3 className="text-black dark:text-gray-200">Location</h3>
                 </div>
 
                 <div className="grid items-center gap-6 md:grid-cols-2">
-                    <div className="aspect-video overflow-hidden rounded-xl bg-gray-200">
+                    <div className="aspect-video overflow-hidden dark:bg-gray-800 rounded-xl bg-gray-400">
                         <svg
                             viewBox="0 0 400 300"
                             className="h-full w-full"
@@ -140,9 +140,9 @@ export default function Location() {
                     </div>
 
                     <div>
-                        <h4 className="mb-2 text-2xl text-black">Nairobi</h4>
-                        <p className="mb-4 text-sm text-gray-400">Kenya</p>
-                        <p className="text-sm text-gray-600">
+                        <h4 className="mb-2 text-2xl text-black dark:text-white">Nairobi</h4>
+                        <p className="mb-4 text-sm text-gray-400 dark:text-gray-50">Kenya</p>
+                        <p className="text-sm dark:text-gray-50 text-gray-600">
                             Based in Nairobi, working with clients globally. Available for
                             remote opportunities and on-site consultations.
                         </p>

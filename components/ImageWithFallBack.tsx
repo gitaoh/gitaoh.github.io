@@ -19,7 +19,7 @@ export default function ImageWithFallback(
     <>
       <Activity mode={didError ? "visible" : "hidden"}>
         <div
-          className={`inline-block bg-gray-100 text-center align-middle ${className ?? ""}`}
+          className={`inline-block bg-gray-100 dark:bg-gray-700 text-center align-middle ${className ?? ""}`}
           style={style}
         >
           <div className="flex h-full w-full items-center justify-center">

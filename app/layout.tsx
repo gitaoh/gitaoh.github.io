@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "next-themes";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,57 +14,46 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// const developmentMetaData: Metadata = {
-//   title: "Created With NextJS",
-//   description:
-//     "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
-// };
-// const productionMetadata: Metadata = {
-//   metadataBase: "https://gitaoh.github.io",
-//   title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
-//   description:
-//     "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
-//   keywords:
-//     "Gitaoh, Frontend Engineer ,TypeScript Developer, Backend Engineer, Cloud Engineer, DevOps Engineer, NestJS, AWS, Software Engineer Portfolio",
-//   authors: [{ name: "Gitaoh", url: "https://gitaoh.github.io" }],
-//   robots: {
-//     index: true,
-//     follow: true,
-//   },
-//   other: {
-//     "revisit-after": "7 days",
-//     distribution: "global",
-//     rating: "general",
-//     "format-detection": "telephone=no, date=no, email=no, address=no",
-//   },
-//   openGraph: {
-//     type: "website",
-//     url: "https://gitaoh.github.io",
-//     title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
-//     description:
-//       "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
-//     images: [
-//       {
-//         url: "https://gitaoh.github.io/og-image.png",
-//         width: 1200,
-//         height: 630,
-//         alt: "Gitaoh Portfolio",
-//       },
-//     ],
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
-//     description:
-//       "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
-//     images: ["https://gitaoh.github.io/og-image.png"],
-//   },
-// };
-
 export const metadata: Metadata = {
-  title: "Created With NextJS",
+  metadataBase: "https://gitaoh.github.io",
+  title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
   description:
     "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
+  keywords:
+    "Gitaoh, Frontend Engineer ,TypeScript Developer, Backend Engineer, Cloud Engineer, DevOps Engineer, NestJS, AWS, Software Engineer Portfolio",
+  authors: [{ name: "Gitaoh", url: "https://gitaoh.github.io" }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  other: {
+    "revisit-after": "7 days",
+    distribution: "global",
+    rating: "general",
+    "format-detection": "telephone=no, date=no, email=no, address=no",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://gitaoh.github.io",
+    title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
+    description:
+      "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
+    images: [
+      {
+        url: "https://gitaoh.github.io/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Gitaoh Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
+    description:
+      "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
+    images: ["https://gitaoh.github.io/og-image.png"],
+  },
 };
 
 function NextThemeProvider({ children }: { children: React.ReactNode }) {
@@ -79,8 +68,10 @@ function NextThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeProvider>
   );
 }
+// TODO: is it RootLayout or Layout
+// Todo: How come the meta is rendered inside the html body tag
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (

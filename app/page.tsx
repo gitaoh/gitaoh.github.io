@@ -1,8 +1,12 @@
 "use client";
-import {BookOpen, Briefcase, Code2, MapPin, Menu, Target} from "lucide-react";
+import {BookOpen, Briefcase, Code2, MapPin, Menu, Moon, Sun, Target} from "lucide-react";
 import React from "react";
 import {motion} from "motion/react";
 import Image from "next/image";
+
+const ERROR_IMG_SRC =
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==";
+
 
 export default function Home() {
     return (
@@ -17,9 +21,6 @@ export default function Home() {
         </div>
     );
 }
-
-const ERROR_IMG_SRC =
-    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==";
 
 function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
     const [didError, setDidError] = React.useState(false);
@@ -66,27 +67,21 @@ function Header() {
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                        >
-                            <path
-                                d="M8 2L2 14h12L8 2z"
-                                stroke="white"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
+                        <Image src={"img.png"} alt={"Logo"} width={32} height={32}/>
                     </div>
                     <span className="text-gray-600 text-sm">code.gitaoh@gmail.com</span>
                 </div>
 
-                <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
-                    <Menu className="w-5 h-5 text-gray-600"/>
-                </button>
+                <div className={"flex items-center gap-3"}>
+
+                    <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
+                        <Menu className="w-5 h-5 text-gray-600"/>
+                    </button>
+                    <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
+                        <Sun className="w-5 h-5 text-gray-600"/>
+                        <Moon className="w-5 h-5 text-gray-600"/>
+                    </button>
+                </div>
             </div>
         </header>
     );
@@ -109,17 +104,17 @@ function Hero() {
                             className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-300 to-gray-400 inline-block"
                         >
                             <ImageWithFallback
-                                src="professional developer portrait"
+                                src="img.png"
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
                         </motion.div>
-                        <span className="text-black">John Doe!</span>
+                        <span className="text-black">Joseph Gitau!</span>
                     </h1>
 
                     <div className="text-4xl md:text-5xl mb-2">
                         <span className="text-gray-400">I&#39;m a </span>
-                        <span className="text-black">Full-Stack Developer</span>
+                        <span className="text-black font-medium">Full-Stack Developer</span>
                         <span className="text-gray-400"> at</span>
                     </div>
 
@@ -177,9 +172,13 @@ function InfoCards() {
     ];
 
     const techStack = [
-        {name: "React & Next.js", color: "from-blue-400 to-blue-600"},
-        {name: "Node.js & Express", color: "from-green-400 to-green-600"},
-        {name: "AWS Cloud", color: "from-orange-400 to-orange-600"},
+        {
+            skills: ["React", "NextJS", "Expo", "React Native", "HTML", "CSS", "TailwindCSS"],
+            color: "from-blue-400 to-blue-600"
+        },
+        {skills: ["Node.js", "ExpressJS", "NestJS", "MongoDB", "Postgresql"], color: "from-green-400 to-green-600"},
+        {skills: ["Git", "Webstorm", "Docker", "Kubernetes", "Ubuntu", "Bash"], color: "from-red-400 to-red-600"},
+        {skills: ["Vercel", "Digital Ocean", "Google Cloud", "AWS Cloud"], color: "from-orange-400 to-orange-600"},
     ];
 
     const resources = [
@@ -249,9 +248,17 @@ function InfoCards() {
                                 viewport={{once: true}}
                                 transition={{delay: 0.2 + index * 0.1}}
                                 whileHover={{scale: 1.05}}
-                                className={`aspect-video rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white p-4`}
+                                className={`aspect-video rounded-xl bg-gradient-to-br ${tech.color} flex items-start flex-wrap gap-1 justify-start text-white p-4`}
                             >
-                                <span className="text-sm text-center">{tech.name}</span>
+                                {tech.skills.map((skill, index) => {
+                                    return (
+                                        <div
+                                            className="text-sm text-center border-2 border-gray-200 px-4 py-1 rounded-lg"
+                                            key={index}>
+                                            {skill}
+                                        </div>
+                                    )
+                                })}
                             </motion.div>
                         ))}
                     </div>
@@ -293,9 +300,10 @@ function InfoCards() {
                         className="aspect-[3/4] rounded-xl overflow-hidden bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center"
                     >
                         <ImageWithFallback
-                            src="programming books"
+                            src="/books.png"
                             alt="Book cover"
                             className="w-full h-full object-cover"
+                            loading={"eager"}
                         />
                     </motion.div>
                 </motion.div>
@@ -456,6 +464,7 @@ function Location() {
 }
 
 function WorkProcess() {
+    const [step, setStep] = React.useState(0)
     const steps = [
         {
             number: "01",
@@ -482,7 +491,7 @@ function WorkProcess() {
             number: "04",
             title: "Deployment & Launch",
             description:
-                "Deploy to production on AWS with proper monitoring, optimization, and post-launch support.",
+                "Deploy to production on AWS (or your csp of choice) with proper monitoring, optimization, and post-launch support.",
             active: false,
         },
         {
@@ -493,6 +502,24 @@ function WorkProcess() {
             active: false,
         },
     ];
+
+    const getStep = (index: number) => {
+        return steps[index]
+    }
+
+    const handleStep = (index: number) => {
+        // Set all steps to inactive
+        steps.map((currentStep) => {
+            if (currentStep.active) currentStep.active = false
+        })
+
+        // Set the current step index
+        setStep(index)
+
+        // Set the current step to active
+        steps[index].active = true
+        return
+    }
 
     return (
         <section className="px-8 py-8 pb-12">
@@ -508,31 +535,30 @@ function WorkProcess() {
                 </div>
 
                 <div className="mb-8">
-                    <h4 className="text-2xl text-black mb-4">01 Discovery Call</h4>
+                    <h4 className="text-2xl text-black mb-4">{getStep(step).title}</h4>
                     <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
-                        We start with a Discovery Call to discuss your goals, needs, and
-                        project requirements. This helps us align our vision and set the
-                        foundation for a successful collaboration.
+                        {getStep(step).description}
                     </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
-                    {steps.map((step, index) => (
+                    {steps.map((current, index) => (
                         <motion.button
-                            key={step.number}
+                            key={current.number}
                             initial={{opacity: 0, scale: 0.8}}
                             whileInView={{opacity: 1, scale: 1}}
                             viewport={{once: true}}
                             transition={{delay: index * 0.05}}
                             whileHover={{scale: 1.05, y: -2}}
                             whileTap={{scale: 0.95}}
-                            className={`px-6 py-2 rounded-full text-sm transition-all ${
-                                step.active
+                            onClick={() => handleStep(index)}
+                            className={`px-6 py-2 rounded-full text-sm transition-all cursor-pointer ${
+                                (index === step)
                                     ? "bg-black text-white"
                                     : "bg-white text-gray-600 border border-gray-200 hover:border-gray-300"
                             }`}
                         >
-                            Step {step.number}
+                            Step {current.number}
                         </motion.button>
                     ))}
                 </div>

@@ -14,8 +14,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://gitaoh.github.io"),
+const developmentMetaData: Metadata = {
+  title: "Created With NextJS",
+  description:
+    "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
+};
+const productionMetadata: Metadata = {
+  metadataBase: "https://gitaoh.github.io",
   title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
   description:
     "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
@@ -54,6 +59,12 @@ export const metadata: Metadata = {
       "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
     images: ["https://gitaoh.github.io/og-image.png"],
   },
+};
+
+export const metadata: Metadata = {
+  title: "Created With NextJS",
+  description:
+    "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
 };
 
 function NextThemeProvider({ children }: { children: React.ReactNode }) {

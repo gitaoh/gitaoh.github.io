@@ -1,3 +1,4 @@
+"use client"
 import { motion } from "motion/react";
 import { BookOpen, Briefcase, Code2 } from "lucide-react";
 import React from "react";

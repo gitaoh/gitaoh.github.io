@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 import React from "react";

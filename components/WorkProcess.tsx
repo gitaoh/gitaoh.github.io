@@ -84,7 +84,7 @@ export default function WorkProcess() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-1 sm:gap-3">
           {steps.map((current, index) => (
             <motion.button
               key={current.number}

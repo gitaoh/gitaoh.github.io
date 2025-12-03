@@ -63,7 +63,7 @@ export default function WorkProcess() {
   };
 
   return (
-    <section className="sm:px-8 py-8 pb-12 px-4">
+    <section className="pt-8 pb-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

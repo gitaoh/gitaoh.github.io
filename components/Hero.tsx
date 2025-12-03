@@ -3,10 +3,11 @@
 import { motion } from "motion/react";
 import React from "react";
 import ImageWithFallback from "@/components/ImageWithFallBack";
+import Calendly from "@/components/Calendly";
 
 export default function Hero() {
   return (
-    <section className="sm:px-8 py-12 px-4">
+    <section className="py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,26 +19,29 @@ export default function Hero() {
             <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ duration: 0.3 }}
-              className="hidden sm:inline-block h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-neutral-400 dark:to-neutral-300"
+              className="hidden h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-gray-300 to-gray-400 sm:inline-block dark:from-neutral-400 dark:to-neutral-300"
             >
               <ImageWithFallback
                 src="img.png"
                 alt="Profile"
                 className="h-full w-full object-cover"
+                loading={"eager"}
               />
             </motion.div>
             <span className="text-black dark:text-white">Joseph Gitau!</span>
           </h1>
 
           <div className="mb-2 text-4xl md:text-5xl">
-            <span className="text-gray-400 dark:text-neutral-300">I&#39;m a </span>
+            <span className="text-gray-400 dark:text-neutral-300">
+              I&#39;m a{" "}
+            </span>
             <span className="font-medium text-black dark:text-white">
               Full-Stack Developer
             </span>
             <span className="text-gray-400 dark:text-neutral-300"> at</span>
           </div>
 
-          <div className="mb-8 flex md:flex-row flex-col items-start gap-4 sm:items-center">
+          <div className="mb-8 flex flex-col items-start gap-4 sm:items-center md:flex-row">
             <h2 className="text-4xl text-orange-400 md:text-5xl dark:text-orange-400">
               Tech Innovations.
             </h2>
@@ -58,14 +62,7 @@ export default function Hero() {
           <br />
           —I&apos;d love to connect!
         </p>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="cursor-pointer rounded-full bg-black px-8 py-3 text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-600/90"
-        >
-          Book a call
-        </motion.button>
+        <Calendly />
       </motion.div>
     </section>
   );

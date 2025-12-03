@@ -3,6 +3,7 @@ import "./globals.css";
 import React from "react";
 import NextThemesProvider from "@/components/ThemeProvider";
 import type { Metadata } from "next";
+import NavHeader from "@/components/NavHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-const CURRENT_URL =
+
+const CURRENT_URL: string =
   process.env.NODE_ENV === "production"
     ? "https://gitaoh.github.io"
     : "http://localhost:3000";
+
 export const metadata: Metadata = {
   metadataBase: new URL(CURRENT_URL),
   keywords: [
@@ -31,9 +34,7 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Portfolio",
   ],
-  authors: [
-    { name: "Gitaoh", url: CURRENT_URL }
-  ],
+  authors: [{ name: "Gitaoh", url: CURRENT_URL }],
   robots: {
     index: true,
     follow: true,
@@ -89,7 +90,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="dak:text-white min-h-screen bg-white dark:bg-neutral-700">
+            <div className="mx-auto w-[95%] md:max-w-[90%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[50%]">
+              <NavHeader />
+              {children}
+            </div>
+          </div>
         </NextThemesProvider>
       </body>
     </html>

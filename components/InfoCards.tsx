@@ -54,7 +54,7 @@ export default function InfoCards() {
   ];
 
   return (
-    <section className="sm:px-8 py-8 px-4">
+    <section className="py-8">
       <div className="grid gap-6 md:grid-cols-3">
         {/* My Experience */}
         <motion.div

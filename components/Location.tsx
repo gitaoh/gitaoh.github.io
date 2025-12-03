@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Location() {
   return (
-    <section className="px-8 py-8">
+    <section className="sm:px-8 py-8 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

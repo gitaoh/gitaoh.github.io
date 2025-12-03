@@ -8,7 +8,7 @@ import Location from "@/components/Location";
 export default function Home() {
   return (
     <div className="dak:text-white min-h-screen bg-white dark:bg-neutral-700">
-      <div className="mx-auto max-w-[50%]">
+      <div className="mx-auto 2xl:max-w-[50%] xl:max-w-[70%] lg:max-w-[80%] md:max-w-[90%] w-[95%]">
         <NavHeader />
         <Hero />
         <InfoCards />

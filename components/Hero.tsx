@@ -6,7 +6,7 @@ import ImageWithFallback from "@/components/ImageWithFallBack";
 
 export default function Hero() {
   return (
-    <section className="px-8 py-12">
+    <section className="sm:px-8 py-12 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export default function Hero() {
             <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ duration: 0.3 }}
-              className="inline-block h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-400 dark:to-gray-300"
+              className="hidden sm:inline-block h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-neutral-400 dark:to-neutral-300"
             >
               <ImageWithFallback
                 src="img.png"
@@ -30,16 +30,15 @@ export default function Hero() {
           </h1>
 
           <div className="mb-2 text-4xl md:text-5xl">
-            <span className="text-gray-400 dark:text-gray-400">I&#39;m a </span>
+            <span className="text-gray-400 dark:text-neutral-300">I&#39;m a </span>
             <span className="font-medium text-black dark:text-white">
               Full-Stack Developer
             </span>
-            <span className="text-gray-400 dark:text-gray-400"> at</span>
+            <span className="text-gray-400 dark:text-neutral-300"> at</span>
           </div>
 
           <div className="mb-8 flex items-center gap-4">
-            {/*style={{ color: "#FF6B35" }}*/}
-            <h2 className="text-4xl text-orange-500 md:text-5xl dark:text-orange-400">
+            <h2 className="text-4xl text-orange-400 md:text-5xl dark:text-orange-400">
               Tech Innovations.
             </h2>
             <motion.span
@@ -63,7 +62,7 @@ export default function Hero() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="cursor-pointer rounded-full bg-black px-8 py-3 text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-600 dark:hover:bg-neutral-600/90"
+          className="cursor-pointer rounded-full bg-black px-8 py-3 text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-600/90"
         >
           Book a call
         </motion.button>

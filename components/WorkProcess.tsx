@@ -63,7 +63,7 @@ export default function WorkProcess() {
   };
 
   return (
-    <section className="px-8 py-8 pb-12">
+    <section className="sm:px-8 py-8 pb-12 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function WorkProcess() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleStep(index)}
-              className={`cursor-pointer rounded-full px-6 py-2 text-sm transition-all ${
+              className={`cursor-pointer rounded-full px-3 sm:px-6 py-2 text-sm transition-all ${
                 index === step
                   ? "bg-black text-white dark:bg-neutral-50 dark:text-neutral-500"
                   : "border border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-neutral-600 dark:bg-neutral-600 dark:text-neutral-100 dark:hover:border-neutral-300"

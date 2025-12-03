@@ -54,7 +54,7 @@ export default function InfoCards() {
   ];
 
   return (
-    <section className="px-8 py-8">
+    <section className="sm:px-8 py-8 px-4">
       <div className="grid gap-6 md:grid-cols-3">
         {/* My Experience */}
         <motion.div
@@ -112,7 +112,7 @@ export default function InfoCards() {
             <h3 className="text-black dark:text-neutral-200">My tech stack</h3>
           </div>
 
-          <div className="mb-4 space-y-3">
+          <div className="mb-4 md:space-y-3 grid grid-cols-2 gap-3 flex-wrap w-full md:w-auto md:gap-0 md:block md:flex-nowrap">
             {techStack.map((tech, index) => (
               <motion.div
                 key={index}
@@ -121,7 +121,7 @@ export default function InfoCards() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className={`aspect-video rounded-xl bg-gradient-to-br ${tech.color} flex flex-wrap items-start justify-start gap-1 p-4 text-white dark:text-neutral-100`}
+                className={`md:aspect-video aspect-auto rounded-xl bg-gradient-to-br ${tech.color} flex flex-wrap items-start justify-start gap-1 p-4 text-white dark:text-neutral-100`}
               >
                 {tech.skills.map((skill, index) => {
                   return (
@@ -179,12 +179,12 @@ export default function InfoCards() {
 
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex aspect-[3/4] items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-orange-400 to-red-500"
+            className="flex h-80 aspect-auto md:aspect-[3/4] items-center justify-center overflow-hidden  rounded-xl bg-gradient-to-br from-orange-400 to-red-500"
           >
             <ImageWithFallback
               src="/books.png"
               alt="Book cover"
-              className="h-full w-full object-cover"
+              className="h-full w-full md:object-cover object-center bg-cover bg-no-repeat bg-center"
               loading={"eager"}
             />
           </motion.div>

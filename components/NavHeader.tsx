@@ -5,7 +5,7 @@ import { ModeToggle } from "@/components/ModeToggle";
 
 export default function NavHeader() {
   return (
-    <header className="border-b border-gray-100 px-8 py-4 dark:border-neutral-600">
+    <header className="border-b border-gray-100 sm:px-8 py-4 px-4 dark:border-neutral-600">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg">

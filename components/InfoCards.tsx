@@ -112,7 +112,7 @@ export default function InfoCards() {
             <h3 className="text-black dark:text-neutral-200">My tech stack</h3>
           </div>
 
-          <div className="mb-4 md:space-y-3 grid grid-cols-2 gap-3 flex-wrap w-full md:w-auto md:gap-0 md:block md:flex-nowrap">
+          <div className="mb-4 md:space-y-3 sm:grid sm:grid-cols-2 sm:gap-3 flex space-y-4 flex-col w-full md:w-auto md:gap-0 md:block md:flex-nowrap">
             {techStack.map((tech, index) => (
               <motion.div
                 key={index}

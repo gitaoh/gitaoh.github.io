@@ -37,7 +37,7 @@ export default function Hero() {
             <span className="text-gray-400 dark:text-neutral-300"> at</span>
           </div>
 
-          <div className="mb-8 flex items-center gap-4">
+          <div className="mb-8 flex items-center sm:gap-4 gap-2">
             <h2 className="text-4xl text-orange-400 md:text-5xl dark:text-orange-400">
               Tech Innovations.
             </h2>

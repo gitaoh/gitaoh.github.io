@@ -1,3 +1,5 @@
+"use client"
+
 import React, { Activity, useState } from "react";
 import Image from "next/image";
 
@@ -19,7 +21,7 @@ export default function ImageWithFallback(
     <>
       <Activity mode={didError ? "visible" : "hidden"}>
         <div
-          className={`inline-block bg-gray-100 dark:bg-gray-700 text-center align-middle ${className ?? ""}`}
+          className={`inline-block bg-gray-100 text-center align-middle dark:bg-gray-700 ${className ?? ""}`}
           style={style}
         >
           <div className="flex h-full w-full items-center justify-center">
@@ -34,7 +36,7 @@ export default function ImageWithFallback(
           </div>
         </div>
       </Activity>
-      <Activity mode={!didError ? "visible" : "hidden"}>
+      <Activity mode={didError ? "hidden" : "visible"}>
         <Image
           src={String(src)}
           alt={String(alt)}

@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import { ThemeProvider } from "next-themes";
+import NextThemesProvider from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 
 const geistSans = Geist({
@@ -15,12 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: "https://gitaoh.github.io",
+  metadataBase: new URL("https://gitaoh.github.io"),
   title: "Gitaoh | Software Engineer • TypeScript • Cloud & DevOps",
   description:
     "Software Engineer specializing in Full-Stack development using Typescript, Cloud, DevOps, AWS, and Scalable Web Applications.",
-  keywords:
-    "Gitaoh, Frontend Engineer ,TypeScript Developer, Backend Engineer, Cloud Engineer, DevOps Engineer, NestJS, AWS, Software Engineer Portfolio",
+  keywords: [
+    "Gitaoh",
+    "Frontend Engineer",
+    "TypeScript Developer",
+    "Backend Engineer",
+    "Cloud Engineer",
+    "DevOps Engineer",
+    "NestJS",
+    "AWS",
+    "Software Engineer",
+    "Portfolio",
+  ],
   authors: [{ name: "Gitaoh", url: "https://gitaoh.github.io" }],
   robots: {
     index: true,
@@ -56,22 +66,9 @@ export const metadata: Metadata = {
   },
 };
 
-function NextThemeProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <ThemeProvider
-      attribute={"class"}
-      defaultTheme={"system"}
-      enableSystem
-      disableTransitionOnChange
-    >
-      {children}
-    </ThemeProvider>
-  );
-}
-// TODO: is it RootLayout or Layout
 // Todo: How come the meta is rendered inside the html body tag
 
-export default function Layout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -83,7 +80,14 @@ export default function Layout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextThemeProvider>{children}</NextThemeProvider>
+        <NextThemesProvider
+          attribute={"class"}
+          defaultTheme={"system"}
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </NextThemesProvider>
       </body>
     </html>
   );

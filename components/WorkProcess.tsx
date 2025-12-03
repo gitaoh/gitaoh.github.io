@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { motion } from "motion/react";
@@ -98,7 +98,7 @@ export default function WorkProcess() {
               className={`cursor-pointer rounded-full px-6 py-2 text-sm transition-all ${
                 index === step
                   ? "bg-black text-white dark:bg-neutral-50 dark:text-neutral-500"
-                  : "border border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-neutral-600 dark:text-neutral-100 dark:hover:border-neutral-300 dark:bg-neutral-600"
+                  : "border border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-neutral-600 dark:bg-neutral-600 dark:text-neutral-100 dark:hover:border-neutral-300"
               }`}
             >
               Step {current.number}

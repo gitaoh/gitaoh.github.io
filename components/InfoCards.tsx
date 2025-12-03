@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { motion } from "motion/react";
 import { BookOpen, Briefcase, Code2 } from "lucide-react";
@@ -63,14 +63,16 @@ export default function InfoCards() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           whileHover={{ y: -5 }}
-          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 dark:bg-neutral-600 dark:border-neutral-500 p-6"
+          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-6 dark:border-neutral-500 dark:bg-neutral-600"
         >
           <div className="mb-6 flex items-center gap-2">
             <Briefcase className="h-5 w-5 text-gray-600 dark:text-neutral-200" />
             <h3 className="text-black dark:text-neutral-300">My Experience</h3>
           </div>
 
-          <p className="mb-4 text-xs text-gray-400 dark:text-neutral-50">Latest projects at:</p>
+          <p className="mb-4 text-xs text-gray-400 dark:text-neutral-50">
+            Latest projects at:
+          </p>
 
           <div className="space-y-4">
             {experiences.map((exp, index) => (
@@ -84,8 +86,12 @@ export default function InfoCards() {
               >
                 <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-black dark:bg-neutral-400"></div>
                 <div>
-                  <p className="mb-1 text-sm text-black dark:text-neutral-100">{exp.title}</p>
-                  <p className="text-xs text-gray-400 dark:text-neutral-300">{exp.period}</p>
+                  <p className="mb-1 text-sm text-black dark:text-neutral-100">
+                    {exp.title}
+                  </p>
+                  <p className="text-xs text-gray-400 dark:text-neutral-300">
+                    {exp.period}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -99,7 +105,7 @@ export default function InfoCards() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileHover={{ y: -5 }}
-          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 dark:bg-neutral-600 dark:border-neutral-500 p-6"
+          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-6 dark:border-neutral-500 dark:bg-neutral-600"
         >
           <div className="mb-6 flex items-center gap-2">
             <Code2 className="h-5 w-5 text-gray-600 dark:text-neutral-200" />
@@ -132,7 +138,9 @@ export default function InfoCards() {
           </div>
 
           <div className="text-center">
-            <p className="mb-1 text-sm text-black dark:text-neutral-300">Core Technologies</p>
+            <p className="mb-1 text-sm text-black dark:text-neutral-300">
+              Core Technologies
+            </p>
             <p className="flex items-center justify-center gap-1 text-xs text-gray-400 dark:text-neutral-100">
               <span className="h-1 w-1 rounded-full bg-green-500"></span>
               Full-Stack
@@ -147,18 +155,24 @@ export default function InfoCards() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ y: -5 }}
-          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 dark:bg-neutral-600 dark:border-neutral-500 p-6"
+          className="cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-6 dark:border-neutral-500 dark:bg-neutral-600"
         >
           <div className="mb-6 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-gray-600 dark:text-neutral-200" />
-            <h3 className="text-black dark:text-neutral-200">What I&#39;m reading</h3>
+            <h3 className="text-black dark:text-neutral-200">
+              What I&#39;m reading
+            </h3>
           </div>
 
           <div className="mb-4 space-y-2">
             {resources.map((book, index) => (
               <div key={index}>
-                <p className="text-sm text-black dark:text-neutral-100">{book.title}</p>
-                <p className="text-xs text-gray-400 dark:text-neutral-300">{book.author}</p>
+                <p className="text-sm text-black dark:text-neutral-100">
+                  {book.title}
+                </p>
+                <p className="text-xs text-gray-400 dark:text-neutral-300">
+                  {book.author}
+                </p>
               </div>
             ))}
           </div>

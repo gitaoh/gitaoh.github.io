@@ -20,11 +20,11 @@ export default function Hero() {
               transition={{ duration: 0.3 }}
               className="inline-block h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-400 dark:to-gray-300"
             >
-              {/*<ImageWithFallback*/}
-              {/*  src="img.png"*/}
-              {/*  alt="Profile"*/}
-              {/*  className="h-full w-full object-cover"*/}
-              {/*/>*/}
+              <ImageWithFallback
+                src="img.png"
+                alt="Profile"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
             <span className="text-black dark:text-white">Joseph Gitau!</span>
           </h1>

@@ -71,8 +71,8 @@ export default function WorkProcess() {
         transition={{ duration: 0.5 }}
       >
         <div className="mb-6 flex items-center gap-2">
-          <Target className="h-5 w-5 text-gray-600 dark:text-neutral-200" />
-          <h3 className="text-black dark:text-neutral-300">How I work</h3>
+          <Target className="h-5 w-5 text-gray-600 dark:text-neutral-50" />
+          <h3 className="text-black dark:text-neutral-50">How I work</h3>
         </div>
 
         <div className="mb-8">

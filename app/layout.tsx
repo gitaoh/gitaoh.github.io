@@ -4,6 +4,7 @@ import React from "react";
 import NextThemesProvider from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import NavHeader from "@/components/NavHeader";
+import { NavFooter } from "@/components/NavFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,6 +95,7 @@ export default function RootLayout({
             <div className="mx-auto w-[95%] md:max-w-[90%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[50%]">
               <NavHeader />
               {children}
+              <NavFooter />
             </div>
           </div>
         </NextThemesProvider>

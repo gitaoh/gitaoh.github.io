@@ -32,7 +32,7 @@ export default function WorkProcess() {
       number: "04",
       title: "Deployment & Launch",
       description:
-        "Deploy to production on AWS (or your csp of choice) with proper monitoring, optimization, and post-launch support.",
+        "Deploy to production on AWS, DigitalOcean, Vercel  with proper monitoring, optimization, and post-launch support.",
       active: false,
     },
     {

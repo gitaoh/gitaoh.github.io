@@ -4,7 +4,7 @@ import InfoCards from "@/components/InfoCards";
 import WorkProcess from "@/components/WorkProcess";
 import Location from "@/components/Location";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />
